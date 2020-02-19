@@ -1,0 +1,20 @@
+<h1 class="mb-4">Add New Review</h1>
+
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs mb-4">
+    <%= f.input :content %>
+  </div>
+
+  <div class="form-inputs mb-4">
+    <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5], prompt: "Select restaurant cousin"%>
+  </div>
+
+
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

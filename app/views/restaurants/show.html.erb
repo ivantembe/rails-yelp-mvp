@@ -1,0 +1,34 @@
+<h1 class="mb-3">New Restaurant</h1>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Phone Number:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+<p>
+  <strong>Cousin:</strong>
+  <%= @restaurant.category %>
+</p>
+
+<strong>Reviews:</strong>
+<ul class="mb-4">
+<% @restaurant.reviews.each do |review| %>
+  <li> <%= review.content %> | Rating: <%= review.rating %></li>
+<% end %>
+</ul>
+
+
+
+<%= link_to 'New Review', new_restaurant_review_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
